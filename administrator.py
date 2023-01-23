@@ -36,12 +36,16 @@ class Administrator:
     def date_and_time_created(self):
         return self._date_and_time_created
 
-    def hello_from_boss(self):
+
+    def get_fullname(self):
+        return f"<{self.name.title()} {self.lastname.title()}> {self.email_address}"
+
+    def say_hello(self):
         #print(number_of_args)
         #if number_of_args == 7 and hasattr(Administrator, 'name') and hasattr(Administrator, 'photo'):
-        print(f"Hello from: lastname: {self.lastname}, name: {self.name}, birth year: {self.year_of_birth},"
+        print(f"Hello from administrator: lastname: {self.lastname}, name: {self.name}, birth year: {self.year_of_birth},"
               f" email: {self.email_address}, m.phone: {self.mobile_phone}, date created: {self.date_and_time_created},"
-              f" address:\"{self.place_of_residence}\", photo: {self.photo}, is_admin {self.is_administrator}")
+              f" address:\"{self.place_of_residence}\", photo: {self.photo}, is_admin: {self.is_administrator}")
         # else:
         #     print(f"Hello from {self.lastname}")
 

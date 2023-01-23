@@ -1,4 +1,5 @@
 import base64
+import datetime
 
 
 def is_whole(n):
@@ -42,6 +43,8 @@ def encode_base64(txt):
     print(base64_message)
     return base64_message
 
-
+def simple_date_format(the_date):
+    #print(the_date.strftime("%d.%m.%Y"))
+    return the_date.strftime("%d.%m.%Y")
 
 
