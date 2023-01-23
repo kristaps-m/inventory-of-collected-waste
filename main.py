@@ -16,8 +16,9 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
     boss2 = administrator.Administrator("Mītins", "Kristaps", 1987, "kristaps@gmail.com", "+371 82850485",
-                                        datetime.now(), "Rīga, Kapsēdes iela 456-5100", "/photos/kristaps_mitins.jpg")
+                                        "Rīga, Kapsēdes iela 456-5100", "/photos/kristaps_mitins.jpg")
     #boss1.hello_from_boss()
+    #boss2.date_and_time_created = "MOTHER FUCKER!"
     boss2.hello_from_boss()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
