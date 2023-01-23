@@ -10,13 +10,13 @@ def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-#boss1 = administrator.Administrator("Mitins")
+#boss1 = administrator.Administrator("Zigbumbulis")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
     boss2 = administrator.Administrator("Mītins", "Kristaps", 1987, "kristaps@gmail.com", "+371 82850485",
-                                        "Rīga, Kapsēdes iela 456-5100", "/photos/kristaps_mitins.jpg")
+                                        "Rīga, Kapsēdes iela 456-5100", "/photos/kristaps_mitins.jpg", True)
     #boss1.hello_from_boss()
     #boss2.date_and_time_created = "MOTHER FUCKER!"
     boss2.hello_from_boss()

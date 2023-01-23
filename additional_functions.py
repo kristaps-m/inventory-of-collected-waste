@@ -1,3 +1,6 @@
+import base64
+
+
 def is_whole(n):
     return n % 1 == 0
 
@@ -29,6 +32,15 @@ def is_all_alphabetic(txt):
         print(f"You entered '{txt}'. Please enter only alphabetic characters!")
 
     return txt
+
+
+def encode_base64(txt):
+    message_bytes = txt.encode('ascii')
+    base64_bytes = base64.b64encode(message_bytes)
+    base64_message = base64_bytes.decode('ascii')
+
+    print(base64_message)
+    return base64_message
 
 
 
