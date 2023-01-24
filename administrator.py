@@ -22,20 +22,19 @@ class Administrator:
 
     def __init__(self, lastname, name, year_of_birth, email_address, mobile_phone,
                  place_of_residence, photo, is_administrator):
-        self.lastname = additional_functions.is_all_alphabetic(lastname)
-        self.name = additional_functions.is_all_alphabetic(name)
+        self.lastname = lastname if additional_functions.is_all_alphabetic(lastname) else "-UNDEFINED-"
+        self.name = name if additional_functions.is_all_alphabetic(name) else "-UNDEFINED-"
         self.year_of_birth = additional_functions.correct_year_of_birth(year_of_birth)
         self.email_address = additional_functions.correct_email(email_address)
         self.mobile_phone = additional_functions.correct_mobile_nr(mobile_phone)
         self.place_of_residence = place_of_residence
         self._date_and_time_created = datetime.now()
-        self.photo = additional_functions.encode_base64(photo)  # I am doing it right or not?
+        self.photo = additional_functions.from_url_save_picture_as_base64(photo)  # I am doing it right or not?
         self.is_administrator = is_administrator
 
     @property
     def date_and_time_created(self):
         return self._date_and_time_created
-
 
     def get_fullname(self):
         return f"<{self.name.title()} {self.lastname.title()}> {self.email_address}"

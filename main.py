@@ -17,10 +17,10 @@ def print_hi(name):
 
 
 helper = volenteer.Volunteer("Mitina", "Dace", 1983, "Dace@gmail.com", "+371 20063111",
-                                    "Rīga, Madagaskaras iela 456-5100", "/photos/dace_mitina.jpg", False)
+                                    "Rīga, Madagaskaras iela 456-5100", "https://picsum.photos/200/300", False)
 
 boss = administrator.Administrator("Mītins", "Kristaps", 1987, "kristaps@gmail.com", "+371 82850111",
-                                    "Rīga, Kapsēdes iela 456-5100", "/photos/kristaps_mitins.jpg", True)
+                                    "Rīga, Kapsēdes iela 456-5100", "https://picsum.photos/200/300", True)
 
 helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
 helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
@@ -43,12 +43,12 @@ helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(20
 if __name__ == '__main__':
     #print_hi('PyCharm')
     #boss.date_and_time_created = "MOTHER FUCKER!"
-    #boss.say_hello()
+    boss.say_hello()
     #helper.date_and_time_created = "MOTHER FUCKER!"
-    #helper.say_hello()
+    helper.say_hello()
     print(boss.get_fullname())
     print(helper.get_fullname())
 
-    helper.get_data_about_collected_waste()
+    #helper.get_data_about_collected_waste()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
