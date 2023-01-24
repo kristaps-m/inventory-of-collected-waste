@@ -1,6 +1,6 @@
 import base64
 import requests
-import datetime
+from datetime import *
 
 
 def is_whole(n):
@@ -55,4 +55,8 @@ def simple_date_format(the_date):
     #print(the_date.strftime("%d.%m.%Y"))
     return the_date.strftime("%d.%m.%Y")
 
+
+def create_datetime(date_string):
+    day, month, year = [int(x) for x in date_string.split('.')]
+    return datetime(year, month, day)
 

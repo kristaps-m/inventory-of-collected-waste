@@ -27,28 +27,31 @@ helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(20
 helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
 helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2018, 1, 1))
 helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
-helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2018, 1, 1))
+helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2019, 1, 1))
 helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
 helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
-helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2018, 1, 1))
+helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2020, 1, 1))
 
 helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
 helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
 
 helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
 
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
+helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2019, 12, 24))
+helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2019, 12, 24))
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     #print_hi('PyCharm')
     #boss.date_and_time_created = "MOTHER FUCKER!"
-    boss.say_hello()
+    #boss.say_hello()
     #helper.date_and_time_created = "MOTHER FUCKER!"
-    helper.say_hello()
+    #helper.say_hello()
     print(boss.get_fullname())
     print(helper.get_fullname())
-
+    # print(helper.summary_of_waste_for_certain_period_of_time("volume", "plastic", datetime(2020, 12, 1), datetime.now()))
+    # print(
+    #     helper.summary_of_waste_for_certain_period_of_time("weight", "glass", datetime(2018, 12, 31), datetime(2019, 12, 1)))
+    helper.all_time_total_data()
     #helper.get_data_about_collected_waste()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
