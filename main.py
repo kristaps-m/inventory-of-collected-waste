@@ -1,57 +1,41 @@
 import administrator
-import volenteer
-from datetime import datetime
+import volunteer
+import dummy_data
+from datetime import *
 
-
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-#boss1 = administrator.Administrator("Zigbumbulis")
-
-
-helper = volenteer.Volunteer("Mitina", "Dace", 1983, "Dace@gmail.com", "+371 20063111",
-                                    "Rīga, Madagaskaras iela 456-5100", "https://picsum.photos/200/300", False)
-
+"""Example Administrator"""
 boss = administrator.Administrator("Mītins", "Kristaps", 1987, "kristaps@gmail.com", "+371 82850111",
-                                    "Rīga, Kapsēdes iela 456-5100", "https://picsum.photos/200/300", True)
+                                   "Rīga, Kapsēdes iela 456-5100", "https://picsum.photos/200/300", True)
 
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2020, 12, 24))
-helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
-helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2018, 1, 1))
-helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
-helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2019, 1, 1))
-helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
-helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
-helper.add_information_about_collected_waste_in_day("glass", 4, 8, datetime(2020, 1, 1))
+"""Example Volunteers"""
+helper1 = volunteer.Volunteer("Berzina", "Liene", 1983, "liene@gmail.com", "+371 20063111",
+                             "Rīga, Madagaskaras iela 456-5100", "https://picsum.photos/200/300", False)
 
-helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
-helper.add_information_about_collected_waste_in_day("paper", 2, 3, datetime(2021, 12, 31))
+helper2 = volunteer.Volunteer("Ozols", "Girts", 15.5, "Girts.Ozols", "+371 25563111",
+                             "Ventspils, Brivibas iela 456-5100", "https://picsum.photos/200/300", False)
 
-helper.add_information_about_collected_waste_in_day("plastic", 2, 6)
+"""Example Administrator adding collected waste data for each volunteer"""
+for one_day in dummy_data.list_of_volunteer_data1:
+    helper1.add_information_about_collected_waste_in_day(*one_day)
 
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2019, 12, 24))
-helper.add_information_about_collected_waste_in_day("plastic", 1, 3, datetime(2019, 12, 24))
-# Press the green button in the gutter to run the script.
+for one_day in dummy_data.list_of_volunteer_data2:
+    helper2.add_information_about_collected_waste_in_day(*one_day)
+
+
 if __name__ == '__main__':
-    #print_hi('PyCharm')
-    #boss.date_and_time_created = "MOTHER FUCKER!"
-    #boss.say_hello()
-    #helper.date_and_time_created = "MOTHER FUCKER!"
-    #helper.say_hello()
     print(boss.get_fullname())
-    print(helper.get_fullname())
-    # print(helper.summary_of_waste_for_certain_period_of_time("volume", "plastic", datetime(2020, 12, 1), datetime.now()))
-    # print(
-    #     helper.summary_of_waste_for_certain_period_of_time("weight", "glass", datetime(2018, 12, 31), datetime(2019, 12, 1)))
-    helper.all_time_total_data()
-    #helper.get_data_about_collected_waste()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print(helper1.get_fullname())
+    helper1.data_about_collected_waste_for_each_day()
+    print(helper1.summary_of_waste_for_certain_period_of_time("volume", "plastic", datetime(2020, 12, 1), datetime.now()))
+    print(helper1.summary_of_waste_for_certain_period_of_time("weight", "plastic", datetime(2023, 1, 23), datetime(2023, 1, 25)))
+    helper1.all_time_total_data()
+    #helper1.save_photo()
+
+    print(helper2.get_fullname())
+    helper2.data_about_collected_waste_for_each_day()
+    print(helper2.summary_of_waste_for_certain_period_of_time("weight", "plastic", datetime(2000, 1, 1), datetime(2019, 12, 31)))
+    print(helper2.summary_of_waste_for_certain_period_of_time("volume", "paper", datetime(2021, 1, 1), datetime(2021, 12, 31)))
+    helper2.all_time_total_data()
+    #helper2.save_photo()
+

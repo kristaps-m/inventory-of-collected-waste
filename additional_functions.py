@@ -49,10 +49,15 @@ def encode_base64(txt):
 
 """encode img from url as base64"""
 def from_url_save_picture_as_base64(url):
-    return base64.b64encode(requests.get(url).content)
+    if requests.get(url).status_code:
+        response = requests.get(url)
+        return base64.b64encode(response.content)
+    else:
+        print("Your link to picture does not exist!")
+        return base64.b64encode(requests.get("https://i.picsum.photos/id/64/4326/2884.jpg?hmac=9_SzX666YRpR_fOyYStXpfSiJ_edO3ghlSRnH2w09Kg").content)
+
 
 def simple_date_format(the_date):
-    #print(the_date.strftime("%d.%m.%Y"))
     return the_date.strftime("%d.%m.%Y")
 
 
