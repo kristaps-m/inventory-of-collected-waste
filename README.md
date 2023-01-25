@@ -1,7 +1,8 @@
 # accounting of collected waste
 ### This project requires 'Python' 
 https://www.python.org/downloads/
-:exclamation::exclamation::exclamation::exclamation::exclamation::exclamation:Do not forget to download and install Python libraries!
+
+:exclamation::exclamation::exclamation:Do not forget to download and install Python libraries!
 
 - ['Requests' - Home page](https://requests.readthedocs.io/en/latest/)
 
